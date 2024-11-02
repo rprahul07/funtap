@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useless Website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #uselessButton {
+            padding: 20px 40px;
+            font-size: 24px;
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #uselessButton:hover {
+            background-color: #e91e63;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #555;
+            opacity: 0; /* Start invisible */
+            animation: none; /* No animation initially */
+        }
+
+        /* Animation styles */
+        @keyframes fadeInBounce {
+            0% { opacity: 0; transform: translateY(20px); }
+            50% { opacity: 1; transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="uselessButton" onclick="showMessage()">Click me!</button>
+        <div id="message">You clicked the button. Nothing happened.</div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const messageDiv = document.getElementById("message");
+            messageDiv.style.animation = "fadeInBounce 1s ease"; // Apply the animation
+            messageDiv.style.opacity = 1; // Make the message visible
+        }
+    </script>
+</body>
+</html>
